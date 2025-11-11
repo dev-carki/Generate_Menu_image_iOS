@@ -1,0 +1,12 @@
+//
+//  Release.xcconfig
+//  Generate_Menu_Image
+//
+//  Created by Carki on 11/11/25.
+//
+
+// TODO: GCP VM 주소로 바꾸기
+API_BASE_URL = http://0.0.0.0:8080
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
