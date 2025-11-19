@@ -1,5 +1,5 @@
 //
-//  MenuBoardNetworkService.swift
+//  CodeItNetworkService.swift
 //  Generate_Menu_Image
 //
 //  Created by Carki on 11/11/25.
@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 import Factory
 
-class MenuBoardNetworkService: NetworkService {
+class CodeItNetworkService: BaseNetworkservice {
     
     private func afErrorConverter(_ afError: AFError) -> MenuBoardNetworkError {
         return MenuBoardNetworkError.AFERROR

@@ -7,9 +7,14 @@
 
 import Foundation
 
+
 enum AppConfig {
     static var apiBaseURL: String {
-        Bundle.main.object(forInfoDictionaryKey: "API_BASE_URL") as? String
-        ?? "http://localhost:8080"  // 기본값 (fallback)
+        guard let url = Bundle.main.object(forInfoDictionaryKey: "API_BASE_URL") as? String else {
+            fatalError("API_BASE_URL is not set in Info.plist")
+        }
+        // %를 //로 치환
+        let fixedURL = url.replacingOccurrences(of: "%", with: "//")
+        return fixedURL
     }
 }

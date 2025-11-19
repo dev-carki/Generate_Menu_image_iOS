@@ -16,7 +16,7 @@ class CustomNavigationController: UINavigationController,UINavigationControllerD
     }
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        viewController.navigationController?.navigationBar.tintColor = UIColor(.myWhite)
+        viewController.navigationController?.navigationBar.tintColor = UIColor(.green)
         viewController.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         viewController.navigationItem.titleView?.tintColor = .white
         //viewController.navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = UIColor(.mainBackgroundColor)
@@ -36,7 +36,7 @@ class CustomNavigationController: UINavigationController,UINavigationControllerD
          navigationBarAppearance.titleTextAttributes = [
              NSAttributedString.Key.foregroundColor : UIColor.black
          ]
-        navigationBarAppearance.backgroundColor = UIColor(.myWhite)
+        navigationBarAppearance.backgroundColor = UIColor(.green)
          UINavigationBar.appearance().standardAppearance = navigationBarAppearance
          UINavigationBar.appearance().compactAppearance = navigationBarAppearance
          UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
