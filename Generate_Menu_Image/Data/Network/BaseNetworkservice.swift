@@ -1,5 +1,5 @@
 //
-//  Networkservice.swift
+//  BaseNetworkservice.swift
 //  Generate_Menu_Image
 //
 //  Created by Carki on 11/11/25.
@@ -11,7 +11,7 @@ import Alamofire
 import UIKit
 import Factory
 
-class NetworkService {
+class BaseNetworkservice {
     let session: Session = {
         let configuration = URLSessionConfiguration.af.default
         configuration.timeoutIntervalForRequest = 5 * 60
@@ -25,7 +25,7 @@ class NetworkService {
 
 
 //MARK: Concurrency
-extension NetworkService {
+extension BaseNetworkservice {
     
     func request<T>(
         _ host: String,

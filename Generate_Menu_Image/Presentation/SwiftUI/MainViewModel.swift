@@ -21,6 +21,8 @@ final class MainViewModel: ObservableObject {
     @Published var image: String = ""
     @Published var created_date: String = ""
     
+    @Published var requestModels: [TempModel] = []
+    
     func generateMenuBoard() async {
         let result = await self.generateMenuBoardUseCase.execute(GenerateMenuBoardRequestModel(prompt: promptText, style: styleText))
         

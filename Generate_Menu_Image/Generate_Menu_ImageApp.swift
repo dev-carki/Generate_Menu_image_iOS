@@ -11,7 +11,7 @@ import SwiftUI
 struct Generate_Menu_ImageApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            CreateStoreView()
         }
     }
 }

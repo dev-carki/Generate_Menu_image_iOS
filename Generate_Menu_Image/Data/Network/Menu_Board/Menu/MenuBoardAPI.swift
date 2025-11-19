@@ -10,9 +10,9 @@ import Alamofire
 
 class MenuBoardAPI {
     var host: String
-    let networkService: MenuBoardNetworkService
+    let networkService: CodeItNetworkService
     
-    init(networkService: MenuBoardNetworkService, host: String) {
+    init(networkService: CodeItNetworkService, host: String) {
         self.networkService = networkService
         self.host = host
     }
