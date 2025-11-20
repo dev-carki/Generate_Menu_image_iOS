@@ -41,4 +41,5 @@ extension Color {
     static let gray100: Color = Color(hex: "#F5F5F5")
     
     static let green: Color = Color(hex: "#14583C")
+    static let backgroundGreen: Color = Color(hex: "#0c372a")
 }

@@ -19,27 +19,23 @@ extension Container {
         Factory(self) { CodeItNetworkService() }
     }
     
-    var menuBoardAPI: Factory<MenuBoardAPI> {
-        Factory(self) { MenuBoardAPI(networkService: self.codeItNetworkService(), host: AppConfig.apiBaseURL) }
-    }
-    
-    var storeAPI: Factory<StoreAPI> {
-        Factory(self) { StoreAPI(networkService: self.codeItNetworkService(), host: AppConfig.apiBaseURL) }
+    var codeitAPI: Factory<CodeitAPI> {
+        Factory(self) { CodeitAPI(networkService: self.codeItNetworkService(), host: AppConfig.apiBaseURL) }
     }
 }
 
 // MARK: Repository
 extension Container {
     var generateMenuBoardRepository: Factory<MenuBoardRepository> {
-        Factory(self) { MenuBoardRepositoryIMPL(api: self.menuBoardAPI()) }
+        Factory(self) { MenuBoardRepositoryIMPL(api: self.codeitAPI()) }
     }
     
     var storeRepository: Factory<StoreRepository> {
-        Factory(self) { StoreRepositoryIMPL(api: self.storeAPI()) }
+        Factory(self) { StoreRepositoryIMPL(api: self.codeitAPI()) }
     }
 }
 
-// MARK: UseCase - MenuBoard
+// MARK: UseCase
 extension Container {
     var generateMenuBoardUseCase: Factory<GenerateMenuBoardUseCase> {
         Factory(self) { GenerateMenuBoardUseCase(menuBoardRepository: self.generateMenuBoardRepository()) }
@@ -48,9 +44,20 @@ extension Container {
     var createStoreUseCase: Factory<CreateStoreUseCase> {
         Factory(self) { CreateStoreUseCase(storeRepository: self.storeRepository()) }
     }
+    
+    var loginUseCase: Factory<LoginUseCase> {
+        Factory(self) { LoginUseCase(storeRepository: self.storeRepository()) }
+    }
 }
+
+// MARK: UseCase - Coordinator
+extension Container {
+}
+
 
 // MARK: Helper - Regx ...
 extension Container {
-    
+    var appContext: Factory<AppContext> {
+        Factory(self) { AppContext() }.singleton
+    }
 }
