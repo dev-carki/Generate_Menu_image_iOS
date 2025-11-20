@@ -8,9 +8,9 @@
 import Foundation
 
 class MenuBoardRepositoryIMPL: MenuBoardRepository {
-    let api: MenuBoardAPI
+    let api: CodeitAPI
     
-    init(api: MenuBoardAPI) {
+    init(api: CodeitAPI) {
         self.api = api
     }
     

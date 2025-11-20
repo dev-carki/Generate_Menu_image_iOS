@@ -9,9 +9,36 @@ import SwiftUI
 
 @main
 struct Generate_Menu_ImageApp: App {
+    @StateObject var coordinator = Coordinator(isRoot: true)
     var body: some Scene {
         WindowGroup {
-            CreateStoreView()
+            NavigationView {
+                ZStack {
+                    Color.white
+                    coordinator.navigationLinkSection()
+                    
+                    switch coordinator.rootState {
+                    case .home:
+                        MainView()
+                            .onAppear {
+                                print("[SD] appear home view")
+                            }
+                    case .login:
+                        LoginView()
+                            .onAppear {
+                                print("[SD] appear login view")
+                            }
+                    case .splash:
+                        SplashView()
+                            .onAppear {
+                                print("[SD] appear splash view")
+                            }
+                    }
+                }
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden()
+            }
+            .navigationViewStyle(.stack)
         }
     }
 }
