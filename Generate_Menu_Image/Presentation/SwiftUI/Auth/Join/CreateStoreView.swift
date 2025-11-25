@@ -14,62 +14,65 @@ struct CreateStoreView: View {
     
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading, spacing: 8) {
-                coordinator.navigationLinkSection()
-                
-                TopBarView(type: .back, text: "스토어 생성") {
-                    self.presentationMode.wrappedValue.dismiss()
-                }
-                .padding(.horizontal, -16)
-                
-                CustomNormalTextField(
-                    titleText: "가게 이름",
-                    placeHolderText: "가게 이름을 입력해주세요.",
-                    inputText: $viewModel.storeName,
-                    isError: .constant(false),
-                    errorText: .constant(""),
-                    keyboardType: .default,
-                    type: .normal
-                )
-                
-                CustomNormalTextField(
-                    titleText: "가게 주소",
-                    placeHolderText: "가게 주소를 입력해주세요.",
-                    inputText: $viewModel.storeAddress,
-                    isError: .constant(false),
-                    errorText: .constant(""),
-                    keyboardType: .default,
-                    type: .normal
-                )
-                
-                CustomNormalTextField(
-                    titleText: "연락처",
-                    placeHolderText: "연락처를 입력해주세요.",
-                    inputText: $viewModel.storePhoneNumber,
-                    isError: .constant(false),
-                    errorText: .constant(""),
-                    keyboardType: .numberPad,
-                    type: .normal
-                )
-                
-                Spacer()
-                
-                CustomButton(type: .middle, text: "작성 완료") {
-                    Task {
-                        await viewModel.createStore()
+            ZStack {
+                VStack(alignment: .leading, spacing: 8) {
+                    coordinator.navigationLinkSection()
+                    
+                    TopBarView(type: .back, text: "스토어 생성") {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                    .padding(.horizontal, -16)
+                    
+                    CustomNormalTextField(
+                        titleText: "가게 이름",
+                        placeHolderText: "가게 이름을 입력해주세요.",
+                        inputText: $viewModel.storeName,
+                        isError: .constant(false),
+                        errorText: .constant(""),
+                        keyboardType: .default,
+                        type: .normal
+                    )
+                    
+                    CustomNormalTextField(
+                        titleText: "가게 주소",
+                        placeHolderText: "가게 주소를 입력해주세요.",
+                        inputText: $viewModel.storeAddress,
+                        isError: .constant(false),
+                        errorText: .constant(""),
+                        keyboardType: .default,
+                        type: .normal
+                    )
+                    
+                    CustomNormalTextField(
+                        titleText: "연락처",
+                        placeHolderText: "연락처를 입력해주세요.",
+                        inputText: $viewModel.storePhoneNumber,
+                        isError: .constant(false),
+                        errorText: .constant(""),
+                        keyboardType: .numberPad,
+                        type: .normal
+                    )
+                    
+                    Spacer()
+                    
+                    CustomButton(type: .middle, text: "작성 완료") {
+                        Task {
+                            await viewModel.createStore()
+                        }
                     }
                 }
+                .padding(.horizontal, 16)
+                
+                if viewModel.isCreating {
+                    CustomProgressView(title: "스토어 생성 중")
+                }
             }
-            .padding(.horizontal, 16)
             .onAppear(perform: {
                 print("API_BASE_URL:", AppConfig.apiBaseURL)
             })
-            .customDialog(isPresented: $viewModel.isCreateSuccess, title: "ID가 생성되었습니다.", content: "ID: \(viewModel.id_text)") {
-                self.presentationMode.wrappedValue.dismiss()
-            } onClose: {
+            .customDialog(isPresented: $viewModel.isCreateSuccess, title: "ID가 생성되었습니다.", content: "ID: \(viewModel.id_text)", alignment: .center) {
                 self.presentationMode.wrappedValue.dismiss()
             }
-
         }
         .navigationViewStyle(.stack)
         .navigationBarHidden(true)

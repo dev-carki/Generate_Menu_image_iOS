@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct MainView: View {
-    weak var navigation: CustomNavigationController?
+    @StateObject private var coordinator: Coordinator = Coordinator()
     @StateObject private var viewModel = MainViewModel()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     
     var body: some View {
-        VStack {
+        NavigationView {
+            coordinator.navigationLinkSection()
+            
+            VStack {
+                Text("메인뷰")
+            }
+
 //            VStack(alignment: .leading) {
 //                VStack(alignment: .leading, spacing: 8) {
 //                    Text("프롬프트")
