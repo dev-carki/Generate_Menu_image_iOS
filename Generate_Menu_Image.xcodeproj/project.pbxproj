@@ -43,6 +43,8 @@
 		C343B6062ECEEAB600E18ED6 /* GetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343B6052ECEEAB600E18ED6 /* GetStore.swift */; };
 		C343B6082ECEF2E800E18ED6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343B6072ECEF2E800E18ED6 /* LoginViewModel.swift */; };
 		C3AC821A2EC6CC2F00DC3B9A /* GenerateMenuBoardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC82192EC6CC2F00DC3B9A /* GenerateMenuBoardCardView.swift */; };
+		C3B1F6A42ED52DC600D48A25 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1F6A32ED52DC600D48A25 /* TopBarView.swift */; };
+		C3B1F6A62ED5334200D48A25 /* CustomDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1F6A52ED5334200D48A25 /* CustomDialogView.swift */; };
 		C3D91AB42EC2D18100F3D9BC /* Generate_Menu_ImageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D91AB32EC2D18100F3D9BC /* Generate_Menu_ImageApp.swift */; };
 		C3D91AB82EC2D18300F3D9BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3D91AB72EC2D18300F3D9BC /* Assets.xcassets */; };
 		C3D91ABB2EC2D18300F3D9BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3D91ABA2EC2D18300F3D9BC /* Preview Assets.xcassets */; };
@@ -113,6 +115,8 @@
 		C343B6052ECEEAB600E18ED6 /* GetStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStore.swift; sourceTree = "<group>"; };
 		C343B6072ECEF2E800E18ED6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C3AC82192EC6CC2F00DC3B9A /* GenerateMenuBoardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateMenuBoardCardView.swift; sourceTree = "<group>"; };
+		C3B1F6A32ED52DC600D48A25 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
+		C3B1F6A52ED5334200D48A25 /* CustomDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDialogView.swift; sourceTree = "<group>"; };
 		C3D91AB02EC2D18000F3D9BC /* Generate_Menu_Image.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Generate_Menu_Image.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D91AB32EC2D18100F3D9BC /* Generate_Menu_ImageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generate_Menu_ImageApp.swift; sourceTree = "<group>"; };
 		C3D91AB72EC2D18300F3D9BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -322,6 +326,8 @@
 				C343B5CA2ECE1D3200E18ED6 /* CustomNormalTextField.swift */,
 				C343B5DC2ECE281D00E18ED6 /* CustomButton.swift */,
 				C343B5E22ECE2CFB00E18ED6 /* TimeInputView.swift */,
+				C3B1F6A32ED52DC600D48A25 /* TopBarView.swift */,
+				C3B1F6A52ED5334200D48A25 /* CustomDialogView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -691,6 +697,7 @@
 				C343B5C42ECE170000E18ED6 /* CreateStoreView.swift in Sources */,
 				C3D91AFB2EC2F32F00F3D9BC /* GenerateMenuResponseModel.swift in Sources */,
 				C343B5A72ECDBE2500E18ED6 /* CreateStoreRequestModel.swift in Sources */,
+				C3B1F6A62ED5334200D48A25 /* CustomDialogView.swift in Sources */,
 				C3D91B152EC30C2B00F3D9BC /* AppConfig.swift in Sources */,
 				C343B6042ECEEA6700E18ED6 /* GetStoreResponseModel.swift in Sources */,
 				C3D91AEA2EC2EFB900F3D9BC /* ApiError.swift in Sources */,
@@ -706,6 +713,7 @@
 				C343B5E12ECE29B200E18ED6 /* UIApplication+Extensions.swift in Sources */,
 				C343B5FF2ECEE42900E18ED6 /* CodeitAPI.swift in Sources */,
 				C343B5F12ECEDF2900E18ED6 /* SplashViewModel.swift in Sources */,
+				C3B1F6A42ED52DC600D48A25 /* TopBarView.swift in Sources */,
 				C343B5CB2ECE1D3200E18ED6 /* CustomNormalTextField.swift in Sources */,
 				C343B6022ECEE43B00E18ED6 /* CodeitEndpoints.swift in Sources */,
 				C343B5FB2ECEE22200E18ED6 /* EmptyResponse.swift in Sources */,

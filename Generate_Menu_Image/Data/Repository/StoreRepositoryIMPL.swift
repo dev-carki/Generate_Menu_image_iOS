@@ -14,7 +14,7 @@ class StoreRepositoryIMPL: StoreRepository {
         self.api = api
     }
     
-    func createStore(_ request: CreateStoreRequestModel) async -> Result<CreateStoreResponseModel?, MenuBoardNetworkError> {
+    func createStore(_ request: CreateStoreRequestModel) async -> Result<CreateStoreResponseModel, MenuBoardNetworkError> {
         return await api.create_store(request).map{ $0.data }
     }
     

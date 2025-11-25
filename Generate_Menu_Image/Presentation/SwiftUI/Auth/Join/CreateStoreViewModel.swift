@@ -25,6 +25,9 @@ final class CreateStoreViewModel: ObservableObject {
     @Published var openTimeErrorMessage: String?
     @Published var closeTimeErrorMessage: String?
     
+    @Published var isCreateSuccess: Bool = false
+    @Published var id_text: String = ""
+    
     func createStore() async {
 //        // 검증
 //        guard await MainActor.run(body: { validateTimes() }) else { return }
@@ -45,7 +48,6 @@ final class CreateStoreViewModel: ObservableObject {
 //            return
 //        }
         
-        
         let result = await self.createStoreUseCase.execute(
             CreateStoreRequestModel(
                 name: self.storeName,
@@ -55,6 +57,18 @@ final class CreateStoreViewModel: ObservableObject {
                 close_time: "21:00"
             )
         )
+        
+        DispatchQueue.main.async {
+            switch result {
+            case .success(let response):
+                self.isCreateSuccess = true
+                self.id_text = String(response.id)
+            case .failure(let error):
+                self.isCreateSuccess = false
+                self.id_text = ""
+            }
+        }
+        
     }
     
     @MainActor

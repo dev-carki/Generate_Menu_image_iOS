@@ -15,7 +15,7 @@ struct SplashView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.backgroundGreen
+                CustomColor.backgroundGreen
                 Image("Splash_Image")
                     .resizable()
                     .scaledToFit()
@@ -28,7 +28,11 @@ struct SplashView: View {
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden()
         .onChange(of: $viewModel.isAvailableToMoveLogin.wrappedValue, perform: { value in
-            coordinator.moveToLogin()
+            if value {
+                withAnimation {
+                    coordinator.moveToLogin()
+                }
+            }
         })
     }
 }

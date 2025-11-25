@@ -10,5 +10,5 @@ import Foundation
 struct MenuBoardResponseWrapper<T: Codable>: Codable {
     let code: Int
     let message: String
-    let data: T?
+    let data: T
 }
