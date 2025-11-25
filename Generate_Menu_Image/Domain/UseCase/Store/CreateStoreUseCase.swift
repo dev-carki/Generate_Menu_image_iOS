@@ -14,9 +14,9 @@ final class CreateStoreUseCase {
         self.storeRepository = storeRepository
     }
     
-    func execute(_ request: CreateStoreRequestModel) async -> Result<CreateStore?, NetworkError> {
+    func execute(_ request: CreateStoreRequestModel) async -> Result<CreateStore, NetworkError> {
         return await self.storeRepository.createStore(request)
-            .map({ $0?.toCreateStore() })
+            .map({ $0.toCreateStore() })
             .mapError({$0.toNetworkError()})
     }
 }

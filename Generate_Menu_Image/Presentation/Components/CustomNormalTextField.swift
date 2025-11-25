@@ -70,7 +70,7 @@ struct CustomNormalTextField: View {
     private func titleArea() -> some View {
         if let title = titleText {
             Text(title)
-                .foregroundColor(.darkgray)
+                .foregroundColor(CustomColor.darkgray)
                 .font(.inputTitle)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -83,11 +83,11 @@ struct CustomNormalTextField: View {
                 TextField("", text: $inputText)
                     .placeholder(when: $inputText.wrappedValue.isEmpty, placeholder: {
                         Text(placeHolderText ?? "")
-                            .foregroundColor(.gray400)
+                            .foregroundColor(CustomColor.gray400)
                             .font(.inputbox)
                     })
                     .autocapitalization(.none) // 대문자로 시작 방지
-                    .foregroundColor(.darkgray)
+                    .foregroundColor(CustomColor.darkgray)
                     .font(.inputbox)
                     .keyboardType(keyboardType)
                     .autocorrectionDisabled()
@@ -111,7 +111,7 @@ struct CustomNormalTextField: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
             .frame(maxWidth: .infinity)
-            .background(isError.wrappedValue ? Color.fail : Color.underStroke)
+            .background(isError.wrappedValue ? CustomColor.fail : CustomColor.underStroke)
             .cornerRadius(8)
             
             //MARK: [Todo - Color]
@@ -129,11 +129,11 @@ struct CustomNormalTextField: View {
                 TextField("", text: $inputText)
                     .placeholder(when: $inputText.wrappedValue.isEmpty, placeholder: {
                         Text(placeHolderText ?? "")
-                            .foregroundColor(.gray400)
+                            .foregroundColor(CustomColor.gray400)
                             .font(.inputbox)
                     })
                     .autocapitalization(.none) // 대문자로 시작 방지
-                    .foregroundColor(.darkgray)
+                    .foregroundColor(CustomColor.darkgray)
                     .font(.inputbox)
                     .keyboardType(keyboardType)
                     .autocorrectionDisabled()
@@ -167,7 +167,7 @@ struct CustomNormalTextField: View {
             
             //MARK: [Todo - Color]
             Rectangle()
-                .foregroundColor(isError.wrappedValue ? .fail : .underStroke)
+                .foregroundColor(isError.wrappedValue ? CustomColor.fail : CustomColor.underStroke)
                 .frame(height: 1)
         }
         .frame(maxWidth: .infinity, alignment: .bottomLeading)
@@ -181,7 +181,7 @@ struct CustomNormalTextField: View {
                 if isError.wrappedValue {
                     Text(errorText.wrappedValue)
                         .font(.inputError)
-                        .foregroundColor(.fail)
+                        .foregroundColor(CustomColor.fail)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
@@ -192,12 +192,12 @@ struct CustomNormalTextField: View {
                 if isError.wrappedValue {
                     Text(errorText.wrappedValue)
                         .font(.inputError)
-                        .foregroundColor(.fail)
+                        .foregroundColor(CustomColor.fail)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 } else if let isConfirm = isConfirm, let confirmText = confirmText, isConfirm.wrappedValue {
                     Text(confirmText.wrappedValue)
                         .font(.inputError)
-                        .foregroundColor(.success)
+                        .foregroundColor(CustomColor.success)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }

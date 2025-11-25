@@ -27,13 +27,13 @@ struct CustomButton: View {
         }, label: {
             Text(text)
                 .font(.button)
-                .foregroundStyle(Color.gray100)
+                .foregroundStyle(CustomColor.gray100)
                 .frame(maxWidth: type.horizontal == 0 ? .infinity : nil)
                 .padding(.vertical, type.vertical)
                 .padding(.horizontal, type.horizontal)
                 .background(
                     RoundedRectangle(cornerRadius: 8)
-                        .foregroundStyle(isEnabled ? Color.green : .gray400)
+                        .foregroundStyle(isEnabled ? CustomColor.green : CustomColor.gray400)
                 )
         })
     }

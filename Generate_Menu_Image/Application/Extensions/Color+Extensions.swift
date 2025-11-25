@@ -6,22 +6,7 @@
 //
 
 import SwiftUI
-
-extension Color {
-    
-    init(hex: String) {
-        let scanner = Scanner(string: hex)
-        _ = scanner.scanString("#")
-        
-        var rgb: UInt64 = 0
-        scanner.scanHexInt64(&rgb)
-        
-        let r = Double((rgb >> 16) & 0xFF) / 255.0
-        let g = Double((rgb >>  8) & 0xFF) / 255.0
-        let b = Double((rgb >>  0) & 0xFF) / 255.0
-        self.init(red: r, green: g, blue: b)
-    }
-    
+class CustomColor {
     static let black: Color = Color(hex: "#1A1A1A")
     static let darkgray: Color = Color(hex: "#404040")
     static let line: Color = Color(hex: "#F4F5F7")
@@ -42,4 +27,19 @@ extension Color {
     
     static let green: Color = Color(hex: "#14583C")
     static let backgroundGreen: Color = Color(hex: "#0c372a")
+}
+
+extension Color {
+    init(hex: String) {
+        let scanner = Scanner(string: hex)
+        _ = scanner.scanString("#")
+        
+        var rgb: UInt64 = 0
+        scanner.scanHexInt64(&rgb)
+        
+        let r = Double((rgb >> 16) & 0xFF) / 255.0
+        let g = Double((rgb >>  8) & 0xFF) / 255.0
+        let b = Double((rgb >>  0) & 0xFF) / 255.0
+        self.init(red: r, green: g, blue: b)
+    }
 }
