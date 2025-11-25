@@ -12,11 +12,18 @@ final class LoginViewModel: ObservableObject {
     @Injected(\.loginUseCase) var loginUseCase
     
     @Published var loginID: String = ""
+    @Published var isLoginTrying: Bool = false
     @Published var isLoginSuccess: Bool = false
     @Published var loginErrorText: String = ""
     
     
     func login() async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            self.isLoginTrying = true
+        }
+        
         guard let id = Int(self.loginID) else { return }
         
         let loginResult = await self.loginUseCase.execute(store_id: id)
@@ -32,6 +39,8 @@ final class LoginViewModel: ObservableObject {
                 self.isLoginSuccess = false
                 self.loginErrorText = "잘못된 ID를 입력하셨습니다"
             }
+            
+            self.isLoginTrying = false
         }
     }
 }

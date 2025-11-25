@@ -60,8 +60,7 @@ extension View {
         title: String,
         content: String,
         alignment: CustomDialogAlignment = CustomDialogAlignment.leading,
-        onConfirm: @escaping () -> (),
-        onClose: @escaping () -> ()
+        onConfirm: @escaping () -> ()
     ) -> some View {
         self
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -70,18 +69,12 @@ extension View {
                 ZStack(content: {
                     Color.black.opacity(0.5)
                         .ignoresSafeArea()
-                        .onTapGesture {
-                            isPresented.wrappedValue = false
-                            onClose()
-                        }
 
                     CustomDialogView(title: title, content: content, alignment: alignment) {
                         isPresented.wrappedValue = false
                         onConfirm()
-                    } onClose: {
-                        isPresented.wrappedValue = false
-                        onClose()
                     }
+                    .padding(.horizontal, 16)
                     .ignoresSafeArea(.keyboard)
                 })
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -115,53 +108,36 @@ struct CustomDialogView: View {
     var content: String
     var alignment: CustomDialogAlignment
     var onConfirm: () -> ()
-    var onClose: () -> ()
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0, content: {
-            VStack(alignment: alignment.horizontalAlignment, spacing: 0, content: {
-                HStack(alignment: .center, spacing: 0, content: {
-                    Image(systemName: "xmark")
-                        .resizable()
-                        .frame(width: 16, height: 16, alignment: .center)
-                        .padding(8)
-                        .contentShape(Rectangle())
-                        .onTapGesture {
-                            onClose()
-                        }
-                    Spacer()
-                })
-                Text(title)
-                    .font(.title)
-                    .foregroundStyle(CustomColor.black)
-                    .multilineTextAlignment(alignment.textAlignment)
-                    .padding(.top, 44)
-                Text(content)
-                    .font(.sub)
-                    .foregroundStyle(CustomColor.gray700)
-                    .multilineTextAlignment(alignment.textAlignment)
-                    .padding(.top, 10)
-                
-                CustomButton(text: "확인") {
-                    onConfirm()
-                }
-                .padding(.top, 44)
-            })
-            .padding(20)
-        })
+        VStack(alignment: alignment.horizontalAlignment, spacing: 24) {
+            Text(title)
+                .font(.title)
+                .foregroundStyle(CustomColor.black)
+                .multilineTextAlignment(alignment.textAlignment)
+            
+            Text(content)
+                .font(.sub)
+                .foregroundStyle(CustomColor.gray700)
+                .multilineTextAlignment(alignment.textAlignment)
+            
+            
+            CustomButton(text: "확인") {
+                onConfirm()
+            }
+            .padding(.top, 20)
+        }
+        .padding(.all, 20)
         .background(
             RoundedRectangle(cornerRadius: 12)
                 .foregroundStyle(Color.white)
         )
-        .padding(.horizontal, 40)
     }
 }
 
 
 #Preview {
     CustomDialogView(title: "", content: "", alignment: .center) {
-        
-    } onClose: {
         
     }
 }

@@ -25,6 +25,7 @@ final class CreateStoreViewModel: ObservableObject {
     @Published var openTimeErrorMessage: String?
     @Published var closeTimeErrorMessage: String?
     
+    @Published var isCreating: Bool = false
     @Published var isCreateSuccess: Bool = false
     @Published var id_text: String = ""
     
@@ -47,6 +48,10 @@ final class CreateStoreViewModel: ObservableObject {
 //            if closeTimeStr.toKorDate() == nil { closeTimeErrorMessage = "마감 시간 입력이 올바르지 않습니다" }
 //            return
 //        }
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.isCreating = true
+        }
         
         let result = await self.createStoreUseCase.execute(
             CreateStoreRequestModel(
@@ -58,7 +63,9 @@ final class CreateStoreViewModel: ObservableObject {
             )
         )
         
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
             switch result {
             case .success(let response):
                 self.isCreateSuccess = true
@@ -67,6 +74,8 @@ final class CreateStoreViewModel: ObservableObject {
                 self.isCreateSuccess = false
                 self.id_text = ""
             }
+            
+            self.isCreating = false
         }
         
     }
