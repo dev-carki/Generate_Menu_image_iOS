@@ -61,6 +61,9 @@ struct LoginView: View {
                         Image("naver")
                             .resizable()
                             .scaledToFit()
+                        Image("apple")
+                            .resizable()
+                            .scaledToFit()
                     }
                     .frame(height: 40)
                     .frame(maxWidth: .infinity)
