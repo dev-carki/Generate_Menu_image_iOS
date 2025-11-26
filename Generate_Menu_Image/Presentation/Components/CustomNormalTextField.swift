@@ -71,7 +71,7 @@ struct CustomNormalTextField: View {
         if let title = titleText {
             Text(title)
                 .foregroundColor(CustomColor.darkgray)
-                .font(.inputTitle)
+                .font(Font.inputTitle)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
@@ -84,11 +84,11 @@ struct CustomNormalTextField: View {
                     .placeholder(when: $inputText.wrappedValue.isEmpty, placeholder: {
                         Text(placeHolderText ?? "")
                             .foregroundColor(CustomColor.gray400)
-                            .font(.inputbox)
+                            .font(Font.inputbox)
                     })
                     .autocapitalization(.none) // 대문자로 시작 방지
                     .foregroundColor(CustomColor.darkgray)
-                    .font(.inputbox)
+                    .font(Font.inputbox)
                     .keyboardType(keyboardType)
                     .autocorrectionDisabled()
                     .focused($textFieldFocused)
@@ -130,11 +130,11 @@ struct CustomNormalTextField: View {
                     .placeholder(when: $inputText.wrappedValue.isEmpty, placeholder: {
                         Text(placeHolderText ?? "")
                             .foregroundColor(CustomColor.gray400)
-                            .font(.inputbox)
+                            .font(Font.inputbox)
                     })
                     .autocapitalization(.none) // 대문자로 시작 방지
                     .foregroundColor(CustomColor.darkgray)
-                    .font(.inputbox)
+                    .font(Font.inputbox)
                     .keyboardType(keyboardType)
                     .autocorrectionDisabled()
                     .focused($textFieldFocused)
@@ -180,7 +180,7 @@ struct CustomNormalTextField: View {
             VStack {
                 if isError.wrappedValue {
                     Text(errorText.wrappedValue)
-                        .font(.inputError)
+                        .font(Font.inputError)
                         .foregroundColor(CustomColor.fail)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
@@ -191,12 +191,12 @@ struct CustomNormalTextField: View {
             VStack {
                 if isError.wrappedValue {
                     Text(errorText.wrappedValue)
-                        .font(.inputError)
+                        .font(Font.inputError)
                         .foregroundColor(CustomColor.fail)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 } else if let isConfirm = isConfirm, let confirmText = confirmText, isConfirm.wrappedValue {
                     Text(confirmText.wrappedValue)
-                        .font(.inputError)
+                        .font(Font.inputError)
                         .foregroundColor(CustomColor.success)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }

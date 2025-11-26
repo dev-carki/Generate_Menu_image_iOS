@@ -109,3 +109,9 @@ extension Notification.Name {
     static let moveToSplash = Notification.Name("MoveToSplash")
     static let moveToLogin = Notification.Name("MoveToLogin")
 }
+
+extension Coordinator {
+    static var preview: Coordinator {
+        Coordinator(isRoot: false)
+    }
+}
