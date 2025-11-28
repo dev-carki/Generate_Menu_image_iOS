@@ -59,28 +59,43 @@ extension View {
         isPresented: Binding<Bool>,
         title: String,
         content: String,
-        alignment: CustomDialogAlignment = CustomDialogAlignment.leading,
-        onConfirm: @escaping () -> ()
+        alignment: CustomDialogAlignment = .leading,
+        onConfirm: @escaping () -> (),
+        onCancel: (() -> Void)? = nil
     ) -> some View {
         self
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .overlay(content: {
-            if isPresented.wrappedValue {
-                ZStack(content: {
-                    Color.black.opacity(0.5)
-                        .ignoresSafeArea()
-
-                    CustomDialogView(title: title, content: content, alignment: alignment) {
-                        isPresented.wrappedValue = false
-                        onConfirm()
+                if isPresented.wrappedValue {
+                    ZStack {
+                        Color.black.opacity(0.5)
+                            .ignoresSafeArea()
+                            .onTapGesture {
+                                // Dim 클릭 시 취소 처리 가능
+                                onCancel?()
+                                isPresented.wrappedValue = false
+                            }
+                        
+                        CustomDialogView(
+                            title: title,
+                            content: content,
+                            alignment: alignment,
+                            onConfirm: {
+                                isPresented.wrappedValue = false
+                                onConfirm()
+                            },
+                            onCancel: {
+                                isPresented.wrappedValue = false
+                                onCancel?()
+                            }
+                        )
+                        .padding(.horizontal, 16)
+                        .ignoresSafeArea(.keyboard)
                     }
-                    .padding(.horizontal, 16)
-                    .ignoresSafeArea(.keyboard)
-                })
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-            }
-        })
+                }
+            })
     }
+
     
 
     public func customDialog<Content: View>(
@@ -108,6 +123,7 @@ struct CustomDialogView: View {
     var content: String
     var alignment: CustomDialogAlignment
     var onConfirm: () -> ()
+    var onCancel: (() -> Void)? = nil  // 옵션
     
     var body: some View {
         VStack(alignment: alignment.horizontalAlignment, spacing: 24) {
@@ -121,11 +137,34 @@ struct CustomDialogView: View {
                 .foregroundStyle(CustomColor.gray700)
                 .multilineTextAlignment(alignment.textAlignment)
             
-            
-            CustomButton(text: "확인") {
-                onConfirm()
+            // MARK: 버튼 영역
+            HStack(spacing: 12) {
+                if let onCancel = onCancel {
+                    Button(action: {
+                        onCancel()
+                    }) {
+                        Text("취소")
+                            .font(.button)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(CustomColor.green)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
+                }
+                
+                Button(action: {
+                    onConfirm()
+                }) {
+                    Text("확인")
+                        .font(.button)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(CustomColor.fail)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
             }
-            .padding(.top, 20)
         }
         .padding(.all, 20)
         .background(

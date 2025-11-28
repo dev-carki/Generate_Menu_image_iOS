@@ -10,6 +10,19 @@ import Foundation
 final class CodeitEndpoints {
     
 }
+// MARK: Menu_List
+extension CodeitEndpoints {
+    enum MenuList: EndPoint {
+        case getMenuListByStoreID(id: Int)
+        
+        var url: String {
+            switch self {
+            case .getMenuListByStoreID(let id):
+                return "/api/v1/menus/store/\(id)"
+            }
+        }
+    }
+}
 
 // MARK: Auth
 extension CodeitEndpoints {

@@ -29,17 +29,35 @@ struct TopBarView: View {
     var text: String
     var onTap: ()->()
     
-    init(type: IconType = .none, text: String, onTap: @escaping () -> Void) {
+    // 오른쪽 옵션
+    var rightIconName: String? = nil
+    var onRightTap: (() -> Void)? = nil
+    
+    var rightText: String? = nil
+    var onRightTextTap: (() -> Void)? = nil
+    
+    init(type: IconType = .none,
+         text: String,
+         onTap: @escaping () -> Void,
+         rightIconName: String? = nil,
+         onRightTap: (() -> Void)? = nil,
+         rightText: String? = nil,
+         onRightTextTap: (() -> Void)? = nil) {
         self.type = type
         self.text = text
         self.onTap = onTap
+        self.rightIconName = rightIconName
+        self.onRightTap = onRightTap
+        self.rightText = rightText
+        self.onRightTextTap = onRightTextTap
     }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            ZStack(alignment: .center) {
+            ZStack {
+                // 왼쪽 아이콘
                 if let systemName = type.image {
-                    HStack(alignment: .center, spacing: 0, content: {
+                    HStack {
                         Image(systemName: systemName)
                             .font(.system(size: 16))
                             .padding()
@@ -48,13 +66,33 @@ struct TopBarView: View {
                                 onTap()
                             }
                         Spacer()
-                    })
+                    }
                 }
+                
+                // 중앙 텍스트
                 Text(text)
                     .font(.gnbText)
                     .foregroundStyle(CustomColor.black)
+                
+                // 오른쪽 끝 버튼
+                HStack {
+                    Spacer()
+                    
+                    if let rightText = rightText, let onRightTextTap = onRightTextTap {
+                        Button(rightText, action: onRightTextTap)
+                            .font(.system(size: 16, weight: .semibold))
+                            .padding(.horizontal)
+                    } else if let rightIconName = rightIconName, let onRightTap = onRightTap {
+                        Image(systemName: rightIconName)
+                            .font(.system(size: 16))
+                            .padding()
+                            .contentShape(Rectangle())
+                            .onTapGesture { onRightTap() }
+                    }
+                }
             }
             .frame(height: 55)
+            
             Rectangle()
                 .frame(height: 1, alignment: .center)
                 .foregroundStyle(CustomColor.line)

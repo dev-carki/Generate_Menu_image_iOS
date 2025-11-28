@@ -10,12 +10,11 @@ import SwiftUI
 enum Destination {
     case login
     case join
-//    case findID
-//    case findPW
     case home
-//    case setting
-//    case changePassword
-//    case accountInfo
+    case showMenuBoard
+    case createMenuBoard
+    case addMenuItem(categoryToEdit: MenuCategory? = nil, onComplete: (MenuCategory) -> Void)
+    
 //    case policy(onClickAgree: () -> (), type: PolicyType)
     
     @ViewBuilder
@@ -23,20 +22,21 @@ enum Destination {
         switch self {
         case .login:
             LoginView()
+            
         case .join:
             CreateStoreView()
-//        case .findID:
-//            FindIDView()
-//        case .findPW:
-//            FindPasswordView()
+            
         case .home:
             MainView()
-//        case .setting:
-//            SettingView()
-//        case .changePassword:
-//            ChangePasswordView()
-//        case .accountInfo:
-//            AccountInfoView()
+            
+        case .showMenuBoard:
+            MenuBoardView()
+            
+        case .createMenuBoard:
+            CreateMenuBoardView()
+            
+        case .addMenuItem(let categoryToEdit, let onComplete):
+            AddMenuItemView(categoryToEdit: categoryToEdit, onComplete: onComplete)
 //        case .policy(let onClickAgree, let type):
 //            PolicyView(vm: PolicyVM(type: type), onClickAgree: onClickAgree)
         }
