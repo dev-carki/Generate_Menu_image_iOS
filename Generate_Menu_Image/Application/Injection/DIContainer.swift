@@ -33,6 +33,10 @@ extension Container {
     var storeRepository: Factory<StoreRepository> {
         Factory(self) { StoreRepositoryIMPL(api: self.codeitAPI()) }
     }
+    
+    var menuListRepository: Factory<MenuListRepository> {
+        Factory(self) { MenuListRepositoryIMPL(api: self.codeitAPI()) }
+    }
 }
 
 // MARK: UseCase
@@ -47,6 +51,10 @@ extension Container {
     
     var loginUseCase: Factory<LoginUseCase> {
         Factory(self) { LoginUseCase(storeRepository: self.storeRepository()) }
+    }
+    
+    var getAllMenuListUseCase: Factory<GetAllMenuListUseCase> {
+        Factory(self) { GetAllMenuListUseCase(menuListRepository: self.menuListRepository()) }
     }
 }
 
