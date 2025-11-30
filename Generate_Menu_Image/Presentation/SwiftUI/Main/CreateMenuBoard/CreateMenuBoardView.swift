@@ -58,6 +58,9 @@ struct CreateMenuBoardView: View {
                     
                     CustomButton(text: "생성하기") {
                         print(viewModel.menuItems)
+                        Task {
+                            await viewModel.createMenuBoard()
+                        }
                     }
                     .padding(.horizontal, 16)
                 }

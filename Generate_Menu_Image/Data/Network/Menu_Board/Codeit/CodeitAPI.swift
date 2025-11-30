@@ -43,3 +43,11 @@ extension CodeitAPI {
         return await self.networkService.get(self.host, url: CodeitEndpoints.MenuList.getMenuListByStoreID(id: store_id).url)
     }
 }
+
+// MARK: Generate Menu Board API
+extension CodeitAPI {
+    func generateMenuBoard(_ request: GenerateMenuRequestModel) async -> Result<CodeitEmptyResponse, MenuBoardNetworkError> {
+        let body = request.toDictionary()
+        return await self.networkService.post(self.host, url: CodeitEndpoints.GenerateMenuBoard.generateMenuBoard.url, httpBody: body)
+    }
+}

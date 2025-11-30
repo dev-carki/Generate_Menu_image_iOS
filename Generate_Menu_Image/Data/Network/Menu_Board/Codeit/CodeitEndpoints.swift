@@ -45,6 +45,19 @@ extension CodeitEndpoints {
 }
 
 extension CodeitEndpoints {
+    enum GenerateMenuBoard: EndPoint {
+        case generateMenuBoard
+        
+        var url: String {
+            switch self {
+            case .generateMenuBoard:
+                return "/api/v1/menus/generation"
+            }
+        }
+    }
+}
+
+extension CodeitEndpoints {
     enum MenuBoard: EndPoint {
         case CreateMenuImage
         case CreateMenuImageWithReference
