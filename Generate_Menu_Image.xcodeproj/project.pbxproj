@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3023B4B2EDC2D3200F4147B /* GenerateMenuBoardRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3023B4A2EDC2D3200F4147B /* GenerateMenuBoardRequestModel.swift */; };
+		C3023B4D2EDC2E0F00F4147B /* GenerateMenuBoardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3023B4C2EDC2E0F00F4147B /* GenerateMenuBoardRepository.swift */; };
+		C3023B4F2EDC2F6F00F4147B /* CodeitEmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3023B4E2EDC2F6F00F4147B /* CodeitEmptyResponse.swift */; };
+		C3023B512EDC2FFE00F4147B /* GenerateMenuBoardRepositoryIMPL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3023B502EDC2FFE00F4147B /* GenerateMenuBoardRepositoryIMPL.swift */; };
+		C3023B542EDC32DA00F4147B /* CreateMenuBoardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3023B532EDC32DA00F4147B /* CreateMenuBoardUseCase.swift */; };
 		C343B5A72ECDBE2500E18ED6 /* CreateStoreRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343B5A62ECDBE2500E18ED6 /* CreateStoreRequestModel.swift */; };
 		C343B5B02ECE126300E18ED6 /* CreateStoreResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343B5AF2ECE126300E18ED6 /* CreateStoreResponseModel.swift */; };
 		C343B5B22ECE131600E18ED6 /* StoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343B5B12ECE131600E18ED6 /* StoreRepository.swift */; };
@@ -84,7 +89,7 @@
 		C3D91B002EC2F5F700F3D9BC /* MenuBoardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D91AFF2EC2F5F700F3D9BC /* MenuBoardRepository.swift */; };
 		C3D91B022EC2F6DF00F3D9BC /* MenuBoardRepositoryIMPL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D91B012EC2F6DF00F3D9BC /* MenuBoardRepositoryIMPL.swift */; };
 		C3D91B052EC2FF5F00F3D9BC /* GenerateMenuBoardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D91B042EC2FF5F00F3D9BC /* GenerateMenuBoardUseCase.swift */; };
-		C3D91B092EC2FFFF00F3D9BC /* GenerateMenuBoardRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D91B082EC2FFFF00F3D9BC /* GenerateMenuBoardRequestModel.swift */; };
+		C3D91B092EC2FFFF00F3D9BC /* GenerateMenuBoardRequestModel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D91B082EC2FFFF00F3D9BC /* GenerateMenuBoardRequestModel1.swift */; };
 		C3D91B0B2EC3008E00F3D9BC /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D91B0A2EC3008E00F3D9BC /* Encodable+Extensions.swift */; };
 		C3D91B0E2EC3036B00F3D9BC /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D91B0D2EC3036A00F3D9BC /* DIContainer.swift */; };
 		C3D91B152EC30C2B00F3D9BC /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D91B142EC30C2B00F3D9BC /* AppConfig.swift */; };
@@ -105,6 +110,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C3023B4A2EDC2D3200F4147B /* GenerateMenuBoardRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateMenuBoardRequestModel.swift; sourceTree = "<group>"; };
+		C3023B4C2EDC2E0F00F4147B /* GenerateMenuBoardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateMenuBoardRepository.swift; sourceTree = "<group>"; };
+		C3023B4E2EDC2F6F00F4147B /* CodeitEmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeitEmptyResponse.swift; sourceTree = "<group>"; };
+		C3023B502EDC2FFE00F4147B /* GenerateMenuBoardRepositoryIMPL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateMenuBoardRepositoryIMPL.swift; sourceTree = "<group>"; };
+		C3023B532EDC32DA00F4147B /* CreateMenuBoardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMenuBoardUseCase.swift; sourceTree = "<group>"; };
 		C343B5A62ECDBE2500E18ED6 /* CreateStoreRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStoreRequestModel.swift; sourceTree = "<group>"; };
 		C343B5AF2ECE126300E18ED6 /* CreateStoreResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStoreResponseModel.swift; sourceTree = "<group>"; };
 		C343B5B12ECE131600E18ED6 /* StoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRepository.swift; sourceTree = "<group>"; };
@@ -180,7 +190,7 @@
 		C3D91AFF2EC2F5F700F3D9BC /* MenuBoardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBoardRepository.swift; sourceTree = "<group>"; };
 		C3D91B012EC2F6DF00F3D9BC /* MenuBoardRepositoryIMPL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBoardRepositoryIMPL.swift; sourceTree = "<group>"; };
 		C3D91B042EC2FF5F00F3D9BC /* GenerateMenuBoardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateMenuBoardUseCase.swift; sourceTree = "<group>"; };
-		C3D91B082EC2FFFF00F3D9BC /* GenerateMenuBoardRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateMenuBoardRequestModel.swift; sourceTree = "<group>"; };
+		C3D91B082EC2FFFF00F3D9BC /* GenerateMenuBoardRequestModel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateMenuBoardRequestModel1.swift; sourceTree = "<group>"; };
 		C3D91B0A2EC3008E00F3D9BC /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
 		C3D91B0D2EC3036A00F3D9BC /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		C3D91B102EC3050500F3D9BC /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -204,6 +214,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C3023B492EDC2D0A00F4147B /* GenerateMenuBoard */ = {
+			isa = PBXGroup;
+			children = (
+				C3023B4A2EDC2D3200F4147B /* GenerateMenuBoardRequestModel.swift */,
+			);
+			path = GenerateMenuBoard;
+			sourceTree = "<group>";
+		};
+		C3023B522EDC32CE00F4147B /* GenerateMenuBoard */ = {
+			isa = PBXGroup;
+			children = (
+				C3023B532EDC32DA00F4147B /* CreateMenuBoardUseCase.swift */,
+			);
+			path = GenerateMenuBoard;
+			sourceTree = "<group>";
+		};
 		C343B5A52ECDBE0B00E18ED6 /* Store */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,6 +589,7 @@
 				C3D91B062EC2FFC500F3D9BC /* Requests */,
 				C3D91AF82EC2F30800F3D9BC /* Responses */,
 				C3D91AF62EC2F27E00F3D9BC /* MenuBoardResponseWrapper.swift */,
+				C3023B4E2EDC2F6F00F4147B /* CodeitEmptyResponse.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -583,6 +610,7 @@
 				C3D91B012EC2F6DF00F3D9BC /* MenuBoardRepositoryIMPL.swift */,
 				C343B5B32ECE133E00E18ED6 /* StoreRepositoryIMPL.swift */,
 				C38F5E532ED6C2FD00B749D7 /* MenuListRepositoryIMPL.swift */,
+				C3023B502EDC2FFE00F4147B /* GenerateMenuBoardRepositoryIMPL.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -656,6 +684,7 @@
 				C3D91AFF2EC2F5F700F3D9BC /* MenuBoardRepository.swift */,
 				C343B5B12ECE131600E18ED6 /* StoreRepository.swift */,
 				C38F5E512ED6C26100B749D7 /* MenuListRepository.swift */,
+				C3023B4C2EDC2E0F00F4147B /* GenerateMenuBoardRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -663,6 +692,7 @@
 		C3D91B032EC2FF3800F3D9BC /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				C3023B522EDC32CE00F4147B /* GenerateMenuBoard */,
 				C38F5E582ED6D12100B749D7 /* MenuList */,
 				C343B5F22ECEE17700E18ED6 /* Member */,
 				C343B5B82ECE13EC00E18ED6 /* MenuBoard */,
@@ -674,6 +704,7 @@
 		C3D91B062EC2FFC500F3D9BC /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				C3023B492EDC2D0A00F4147B /* GenerateMenuBoard */,
 				C343B5A52ECDBE0B00E18ED6 /* Store */,
 				C3D91B072EC2FFD300F3D9BC /* MenuBoard */,
 			);
@@ -683,7 +714,7 @@
 		C3D91B072EC2FFD300F3D9BC /* MenuBoard */ = {
 			isa = PBXGroup;
 			children = (
-				C3D91B082EC2FFFF00F3D9BC /* GenerateMenuBoardRequestModel.swift */,
+				C3D91B082EC2FFFF00F3D9BC /* GenerateMenuBoardRequestModel1.swift */,
 			);
 			path = MenuBoard;
 			sourceTree = "<group>";
@@ -802,6 +833,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3023B4B2EDC2D3200F4147B /* GenerateMenuBoardRequestModel.swift in Sources */,
 				C3D91AE62EC2EEC800F3D9BC /* CodeItNetworkService.swift in Sources */,
 				C38F5E5E2ED925CD00B749D7 /* MainView.swift in Sources */,
 				C38F5E5A2ED6D13700B749D7 /* GetAllMenuListUseCase.swift in Sources */,
@@ -818,6 +850,7 @@
 				C3D91ADC2EC2D6C400F3D9BC /* EndPoint.swift in Sources */,
 				C38F5E572ED6CA8700B749D7 /* MenuList.swift in Sources */,
 				C343B5C42ECE170000E18ED6 /* CreateStoreView.swift in Sources */,
+				C3023B542EDC32DA00F4147B /* CreateMenuBoardUseCase.swift in Sources */,
 				C38F5E662ED9319C00B749D7 /* MenuCardView.swift in Sources */,
 				C3D91AFB2EC2F32F00F3D9BC /* GenerateMenuResponseModel.swift in Sources */,
 				C343B5A72ECDBE2500E18ED6 /* CreateStoreRequestModel.swift in Sources */,
@@ -834,6 +867,7 @@
 				C343B5F42ECEE18300E18ED6 /* LoginUseCase.swift in Sources */,
 				C343B5CE2ECE1D6400E18ED6 /* CustomTextFieldType.swift in Sources */,
 				C343B5BD2ECE146700E18ED6 /* CreateStore.swift in Sources */,
+				C3023B4D2EDC2E0F00F4147B /* GenerateMenuBoardRepository.swift in Sources */,
 				C343B5E12ECE29B200E18ED6 /* UIApplication+Extensions.swift in Sources */,
 				C38F5E502ED6BD5C00B749D7 /* MenuListResponseModel.swift in Sources */,
 				C343B5FF2ECEE42900E18ED6 /* CodeitAPI.swift in Sources */,
@@ -849,11 +883,12 @@
 				C38F5E542ED6C2FD00B749D7 /* MenuListRepositoryIMPL.swift in Sources */,
 				C343B5DB2ECE272800E18ED6 /* Font+Extensions.swift in Sources */,
 				C3D91AEF2EC2F02800F3D9BC /* NetworkError.swift in Sources */,
+				C3023B512EDC2FFE00F4147B /* GenerateMenuBoardRepositoryIMPL.swift in Sources */,
 				C343B5C92ECE1B3300E18ED6 /* TimeValidation.swift in Sources */,
 				C343B5EC2ECEDE6500E18ED6 /* LoginView.swift in Sources */,
 				C343B5B22ECE131600E18ED6 /* StoreRepository.swift in Sources */,
 				C38F5E712ED93FA800B749D7 /* GenerateMenuModel.swift in Sources */,
-				C3D91B092EC2FFFF00F3D9BC /* GenerateMenuBoardRequestModel.swift in Sources */,
+				C3D91B092EC2FFFF00F3D9BC /* GenerateMenuBoardRequestModel1.swift in Sources */,
 				C343B5B02ECE126300E18ED6 /* CreateStoreResponseModel.swift in Sources */,
 				C343B5C22ECE16F800E18ED6 /* CreateStoreViewModel.swift in Sources */,
 				C343B5BF2ECE151000E18ED6 /* Date+Extensions.swift in Sources */,
@@ -872,6 +907,7 @@
 				C343B5C62ECE187200E18ED6 /* String+Extension.swift in Sources */,
 				C3D91B182EC30F2100F3D9BC /* MenuBoardViewModel.swift in Sources */,
 				C343B5EF2ECEDF1A00E18ED6 /* SplashView.swift in Sources */,
+				C3023B4F2EDC2F6F00F4147B /* CodeitEmptyResponse.swift in Sources */,
 				C38F5E602ED925D400B749D7 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
