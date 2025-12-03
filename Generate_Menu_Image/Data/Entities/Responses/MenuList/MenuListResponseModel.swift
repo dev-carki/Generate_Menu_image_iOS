@@ -9,7 +9,7 @@ import Foundation
 struct MenuListResponseModel: Codable {
     let menu_id: Int
     let menu_name: String
-    let menu_description: String
+    let menu_description: String = ""
     let items: [ItemResponseModel]
 }
 

@@ -12,6 +12,9 @@
 		C3023B4F2EDC2F6F00F4147B /* CodeitEmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3023B4E2EDC2F6F00F4147B /* CodeitEmptyResponse.swift */; };
 		C3023B512EDC2FFE00F4147B /* GenerateMenuBoardRepositoryIMPL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3023B502EDC2FFE00F4147B /* GenerateMenuBoardRepositoryIMPL.swift */; };
 		C3023B542EDC32DA00F4147B /* CreateMenuBoardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3023B532EDC32DA00F4147B /* CreateMenuBoardUseCase.swift */; };
+		C31D83032EDEC598005E0AF6 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31D83022EDEC598005E0AF6 /* QRCodeView.swift */; };
+		C31D830A2EDECE68005E0AF6 /* QRCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31D83092EDECE68005E0AF6 /* QRCodeViewModel.swift */; };
+		C31D830D2EDED583005E0AF6 /* OverCurrentContextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31D830C2EDED583005E0AF6 /* OverCurrentContextModifier.swift */; };
 		C343B5A72ECDBE2500E18ED6 /* CreateStoreRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343B5A62ECDBE2500E18ED6 /* CreateStoreRequestModel.swift */; };
 		C343B5B02ECE126300E18ED6 /* CreateStoreResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343B5AF2ECE126300E18ED6 /* CreateStoreResponseModel.swift */; };
 		C343B5B22ECE131600E18ED6 /* StoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343B5B12ECE131600E18ED6 /* StoreRepository.swift */; };
@@ -115,6 +118,9 @@
 		C3023B4E2EDC2F6F00F4147B /* CodeitEmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeitEmptyResponse.swift; sourceTree = "<group>"; };
 		C3023B502EDC2FFE00F4147B /* GenerateMenuBoardRepositoryIMPL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateMenuBoardRepositoryIMPL.swift; sourceTree = "<group>"; };
 		C3023B532EDC32DA00F4147B /* CreateMenuBoardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMenuBoardUseCase.swift; sourceTree = "<group>"; };
+		C31D83022EDEC598005E0AF6 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		C31D83092EDECE68005E0AF6 /* QRCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModel.swift; sourceTree = "<group>"; };
+		C31D830C2EDED583005E0AF6 /* OverCurrentContextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverCurrentContextModifier.swift; sourceTree = "<group>"; };
 		C343B5A62ECDBE2500E18ED6 /* CreateStoreRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStoreRequestModel.swift; sourceTree = "<group>"; };
 		C343B5AF2ECE126300E18ED6 /* CreateStoreResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStoreResponseModel.swift; sourceTree = "<group>"; };
 		C343B5B12ECE131600E18ED6 /* StoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRepository.swift; sourceTree = "<group>"; };
@@ -228,6 +234,14 @@
 				C3023B532EDC32DA00F4147B /* CreateMenuBoardUseCase.swift */,
 			);
 			path = GenerateMenuBoard;
+			sourceTree = "<group>";
+		};
+		C31D830B2EDED57A005E0AF6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C31D830C2EDED583005E0AF6 /* OverCurrentContextModifier.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		C343B5A52ECDBE0B00E18ED6 /* Store */ = {
@@ -416,6 +430,8 @@
 			children = (
 				C3D91ADD2EC2D9B900F3D9BC /* MenuBoardView.swift */,
 				C3D91B172EC30F2100F3D9BC /* MenuBoardViewModel.swift */,
+				C31D83022EDEC598005E0AF6 /* QRCodeView.swift */,
+				C31D83092EDECE68005E0AF6 /* QRCodeViewModel.swift */,
 			);
 			path = MenuBoard;
 			sourceTree = "<group>";
@@ -545,6 +561,7 @@
 		C3D91AC62EC2D51000F3D9BC /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				C31D830B2EDED57A005E0AF6 /* Helper */,
 				C343B5E42ECEDD9200E18ED6 /* Coordinator */,
 				C343B5C72ECE1B2600E18ED6 /* Validation */,
 				C3D91B0C2EC3035C00F3D9BC /* Injection */,
@@ -836,6 +853,7 @@
 				C3023B4B2EDC2D3200F4147B /* GenerateMenuBoardRequestModel.swift in Sources */,
 				C3D91AE62EC2EEC800F3D9BC /* CodeItNetworkService.swift in Sources */,
 				C38F5E5E2ED925CD00B749D7 /* MainView.swift in Sources */,
+				C31D83032EDEC598005E0AF6 /* QRCodeView.swift in Sources */,
 				C38F5E5A2ED6D13700B749D7 /* GetAllMenuListUseCase.swift in Sources */,
 				C3D91AF22EC2F06600F3D9BC /* MenuBoardErrorResponse.swift in Sources */,
 				C3D91B002EC2F5F700F3D9BC /* MenuBoardRepository.swift in Sources */,
@@ -843,6 +861,7 @@
 				C3D91AB42EC2D18100F3D9BC /* Generate_Menu_ImageApp.swift in Sources */,
 				C3D91AE82EC2EF9000F3D9BC /* BaseNetworkservice.swift in Sources */,
 				C343B5DF2ECE298800E18ED6 /* View+Extensions.swift in Sources */,
+				C31D830D2EDED583005E0AF6 /* OverCurrentContextModifier.swift in Sources */,
 				C3D91AF72EC2F27E00F3D9BC /* MenuBoardResponseWrapper.swift in Sources */,
 				C343B6082ECEF2E800E18ED6 /* LoginViewModel.swift in Sources */,
 				C3D91AE12EC2DBB600F3D9BC /* CustomNavigationController.swift in Sources */,
@@ -894,6 +913,7 @@
 				C343B5BF2ECE151000E18ED6 /* Date+Extensions.swift in Sources */,
 				C343B5DD2ECE281D00E18ED6 /* CustomButton.swift in Sources */,
 				C3D91B0B2EC3008E00F3D9BC /* Encodable+Extensions.swift in Sources */,
+				C31D830A2EDECE68005E0AF6 /* QRCodeViewModel.swift in Sources */,
 				C343B5B42ECE133E00E18ED6 /* StoreRepositoryIMPL.swift in Sources */,
 				C38F5E762ED9447800B749D7 /* AddMenuItemViewModel.swift in Sources */,
 				C3D91B052EC2FF5F00F3D9BC /* GenerateMenuBoardUseCase.swift in Sources */,

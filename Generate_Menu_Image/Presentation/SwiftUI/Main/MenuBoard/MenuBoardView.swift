@@ -16,33 +16,64 @@ struct MenuBoardView: View {
     var body: some View {
         NavigationView {
 //            coordinator.navigationLinkSection()
-            
-            ScrollView {
-                VStack(alignment: .leading, spacing: 24) {
-                    
-                    ForEach(viewModel.menuLists, id: \.id) { category in
-                        VStack(alignment: .leading, spacing: 8) {
-                            
-                            Text(category.categoryName)
-                                .font(.title2)
-                                .bold()
-                            
-                            if !category.categoryDesc.isEmpty {
-                                Text(category.categoryDesc)
-                                    .font(.subheadline)
-                                    .foregroundColor(.gray)
-                            }
-                            
-                            // 메뉴 아이템들
-                            ForEach(category.items, id: \.id) { item in
-                                MenuItemRow(item: item)
-                            }
+            ZStack {
+                VStack(alignment: .leading, spacing: 0) {
+                    TopBarView(
+                        type: .back,
+                        text: "메뉴판 조회",
+                        onTap: {
+                            self.presentationMode.wrappedValue.dismiss()
+                        },
+                        rightIconName: "qrcode",
+                        onRightTap: {
+                            viewModel.isShowQRCodeView = true
                         }
-                        .padding(.horizontal, 16)
-                    }
+                    )
                     
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 24) {
+                            
+                            ForEach(viewModel.menuLists, id: \.id) { category in
+                                VStack(alignment: .leading, spacing: 8) {
+                                    
+                                    Text(category.categoryName)
+                                        .font(.title2)
+                                        .bold()
+                                    
+                                    if !category.categoryDesc.isEmpty {
+                                        Text(category.categoryDesc)
+                                            .font(.subheadline)
+                                            .foregroundColor(.gray)
+                                    }
+                                    
+                                    // 메뉴 아이템들
+                                    ForEach(category.items, id: \.id) { item in
+                                        MenuItemRow(item: item)
+                                    }
+                                }
+                                .padding(.horizontal, 16)
+                            }
+                            
+                        }
+                    }
+                }
+                .overlay(alignment: .center) {
+                    if viewModel.isShowQRCodeView {
+                        Color.black.opacity(0.5)
+                            .ignoresSafeArea()
+                            .onTapGesture {
+                                viewModel.isShowQRCodeView = false
+                            }
+                    }
+                }
+                
+                if viewModel.isShowQRCodeView {
+                    QRCodeView(url: AppConfig.menuBoardURL)
+                        .transition(.opacity)
+                        .zIndex(1)
                 }
             }
+            .animation(.easeInOut, value: viewModel.isShowQRCodeView)
         }
         .onAppear {
             Task {
@@ -50,6 +81,9 @@ struct MenuBoardView: View {
                 print(viewModel.menuLists)
             }
         }
+        .navigationViewStyle(.stack)
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden()
     }
 }
 

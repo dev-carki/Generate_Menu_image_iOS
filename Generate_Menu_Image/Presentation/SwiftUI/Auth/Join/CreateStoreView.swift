@@ -15,6 +15,7 @@ struct CreateStoreView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                
                 VStack(alignment: .leading, spacing: 8) {
                     coordinator.navigationLinkSection()
                     

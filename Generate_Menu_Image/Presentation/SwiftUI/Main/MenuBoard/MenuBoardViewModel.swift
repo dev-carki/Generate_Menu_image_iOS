@@ -11,19 +11,22 @@ import Factory
 
 final class MenuBoardViewModel: ObservableObject {
     @Injected(\.getAllMenuListUseCase) var getAllMenuListUseCase
+    @Injected(\.appContext) var appContext
     
     @Published var menuLists: [MenuList] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String = ""
     
+    @Published var isShowQRCodeView: Bool = false
     
-    func getAllMenuList(storeId: Int = 1) async {
+    
+    func getAllMenuList() async {
         DispatchQueue.main.async {
             self.isLoading = true
             self.errorMessage = ""
         }
         
-        let result = await self.getAllMenuListUseCase.execute(store_id: storeId)
+        let result = await self.getAllMenuListUseCase.execute(store_id: appContext.storeID)
         
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }

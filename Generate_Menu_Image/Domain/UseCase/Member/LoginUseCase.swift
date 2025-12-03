@@ -22,6 +22,7 @@ class LoginUseCase {
         case .success(_):
             if let response = try? autoLoginResult.get() {
                 appContext.storeName = String(response.name)
+                appContext.storeID = response.id
                 return .success(nil)
             }
             return .success(nil)

@@ -11,6 +11,7 @@ import Factory
 
 final class CreateMenuBoardViewModel: ObservableObject {
     @Injected(\.createMenuBoardUseCase) var createMenuBoardUseCase
+    @Injected(\.appContext) var appContext
     @Published var isCreateing: Bool = false
     @Published var isCreateSuccess: Bool = false
     @Published var isDelete: Bool = false
@@ -24,7 +25,7 @@ final class CreateMenuBoardViewModel: ObservableObject {
             self.isCreateing = true
         }
         
-        let result = await self.createMenuBoardUseCase.execute(menus: menuItems, storeID: 1)
+        let result = await self.createMenuBoardUseCase.execute(menus: menuItems, storeID: appContext.storeID)
         
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }

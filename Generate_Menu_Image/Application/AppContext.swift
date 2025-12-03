@@ -9,4 +9,5 @@ import Foundation
 
 class AppContext {
     var storeName: String = ""
+    var storeID: Int = 1
 }
