@@ -28,8 +28,8 @@ xcuserdata/
 timeline.xctimeline
 playground.xcworkspace
 
-Debug.xcconfig
-Release.xcconfig
+Generate_Menu_Image/Config/Debug.xcconfig
+Generate_Menu_Image/Config/Release.xcconfig
 
 # =========================================
 # Swift Config Files
