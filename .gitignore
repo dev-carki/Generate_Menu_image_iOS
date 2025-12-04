@@ -28,6 +28,9 @@ xcuserdata/
 timeline.xctimeline
 playground.xcworkspace
 
+Debug.xcconfig
+Release.xcconfig
+
 # =========================================
 # Swift Config Files
 # =========================================
